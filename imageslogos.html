@@ -1,0 +1,60 @@
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel img {
+    flex: 0 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    scroll-snap-align: start;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .carousel img:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+<div class="carousel">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/Affinity_idCkE2xRGM_1.png" alt="Affinity">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/D5%20Render_ida9LSNcdG_0.png" alt="D5 Render">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/adobe-illustrator-seeklogo.png" alt="Adobe Illustrator">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/adobe-indesign-seeklogo.png" alt="Adobe InDesign">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/adobe-photoshop-seeklogo.png" alt="Adobe Photoshop">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/affinity-publisher-seeklogo.png" alt="Affinity Publisher">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/affinity-seeklogo.png" alt="Affinity Designer">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/afinity%20photo%20logo.png" alt="Affinity Photo">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/autocad-seeklogo.png" alt="AutoCAD">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/download%20(1).jpg" alt="SketchUp">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/idB4dHeaZ4_1750603386616.jpeg" alt="Revit">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/microsoft-excel-seeklogo.png" alt="Excel">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/microsoft-powerpoint-seeklogo.png" alt="PowerPoint">
+  <img src="https://github.com/ArrieVDraught/portfolio-images/raw/230596c3b09196cf34f3db27a71ccbae6ee5630e/assets/navisworks-seeklogo.png" alt="Navisworks">
+</div>
+
+<script>
+  const carousel = document.querySelector('.carousel');
+  let scrollAmount = 0;
+  const scrollStep = 1; // pixels per interval
+  const delay = 10; // ms between scroll updates
+
+  function autoScroll() {
+    scrollAmount += scrollStep;
+    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      scrollAmount = 0; // reset scroll
+    }
+    carousel.scrollLeft = scrollAmount;
+  }
+
+  setInterval(autoScroll, delay);
+</script>
